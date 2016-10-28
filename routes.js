@@ -49,5 +49,16 @@ module.exports=function(app){
 			if(!err) console.log('SerieTV Actualizada');
 			else console.log('ERROR'+ err);
 		});
+	};
+
+	///DELETE
+
+	deleteSerieTV=function(req,res){
+		SerieTV.findByID(req.param.id,function(err,serietv){
+			serietv.remove(function(err){
+				if(!err) console.log('SerieTV Borrada');
+				else console.log('ERROR'+ err);
+			});
+		});
 	}
 }	
