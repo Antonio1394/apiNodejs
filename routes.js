@@ -29,7 +29,7 @@ module.exports=function(app){
 		});
 
 		SerieTV.save(function(err){
-			if(!err) console.log('SerieTV Guardad');
+			if(!err) console.log('SerieTV Guardada');
 			else console.log('ERROR'+ err);
 		});
 
@@ -39,7 +39,15 @@ module.exports=function(app){
 	//PUT
 	updateSerieTv=function(req,res){
 		SerieTV.findByID(req.param.id,function(err,serietv){
-			
+			serietv.titulo=req.body.titulo;
+			serietv.temporadas=req.body.temporadas;
+			serietv.pais=req.body.pais;
+			serietv.genero=req.body.genero;
+		});
+
+		serietv.save(function(err){
+			if(!err) console.log('SerieTV Actualizada');
+			else console.log('ERROR'+ err);
 		});
 	}
 }	
