@@ -34,5 +34,12 @@ module.exports=function(app){
 		});
 
 		res.send(serietv);
+	};
+
+	//PUT
+	updateSerieTv=function(req,res){
+		SerieTV.findByID(req.param.id,function(err,serietv){
+			
+		});
 	}
 }	
