@@ -61,4 +61,12 @@ module.exports=function(app){
 			});
 		});
 	}
+
+	///API Routes
+
+	app.get('/seriestv',findAllSeriesTV):
+	app.get('/seriestv/:id',findByID);
+	app.post('/seriestv',addSerieTV);
+	app.put('/seriestv/:id',updateSerieTv);
+	app.delete('/seriestv/:id', deleteSerieTV);
 }	
