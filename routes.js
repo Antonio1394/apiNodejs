@@ -25,10 +25,10 @@ module.exports=function(app){
 			titulo:req.body.titulo,
 			temporadas:req.body.temporadas,
 			pais:req.body.pais,
-			genero.req.body.genero,
+			genero:req.body.genero,
 		});
 
-		SerieTV.save(function(err){
+		serietv.save(function(err){
 			if(!err) console.log('SerieTV Guardada');
 			else console.log('ERROR'+ err);
 		});
@@ -64,7 +64,7 @@ module.exports=function(app){
 
 	///API Routes
 
-	app.get('/seriestv',findAllSeriesTV):
+	app.get('/seriestv',findAllSeriesTV);
 	app.get('/seriestv/:id',findByID);
 	app.post('/seriestv',addSerieTV);
 	app.put('/seriestv/:id',updateSerieTv);

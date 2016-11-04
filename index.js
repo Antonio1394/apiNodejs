@@ -13,9 +13,11 @@ app.get(function(){
 	app.use(app.router);
 });
 
-app.get('/',function(req, res){
+app.get('/prueba',function(req, res){
 	res.send('hola mundo');
 });
+
+require('./routes')(app);
 
 app.listen(5000);
 console.log('Servidor express Escuchando en el puerto 5000');	
