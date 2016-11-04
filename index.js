@@ -1,6 +1,7 @@
 var express=require('express');
 var mongoose=require('mongoose');
 var app=express();
+var bodyParser = require('body-parser');
 
 mongoose.connect('mongodb://localhost/seriestv',function(err, res){
 	if(err) console.log('Error: conectando a la base de datos: '+err);
