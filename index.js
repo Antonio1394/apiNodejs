@@ -1,7 +1,8 @@
-var express=require('express');
-var mongoose=require('mongoose');
-var app=express();
-var bodyParser = require('body-parser');
+var express=require('express')
+var mongoose=require('mongoose')
+var bodyParser = require('body-parser')
+var methodOverride = require("method-override");
+var app=express()
 
 mongoose.connect('mongodb://localhost/seriestv',function(err, res){
 	if(err) console.log('Error: conectando a la base de datos: '+err);
@@ -9,7 +10,9 @@ mongoose.connect('mongodb://localhost/seriestv',function(err, res){
 });
 
 app.get(function(){
-	app.use(express.bodyParser());
+	app.use(bodyParser.urlencoded({ extended: false }));  
+	app.use(bodyParser.json());  
+	app.use(methodOverride());
 	app.use(express.methodOverride());
 	app.use(app.router);
 });

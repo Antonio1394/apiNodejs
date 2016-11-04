@@ -22,10 +22,10 @@ module.exports=function(app){
 		console.log('POST');
 		console.log(req.body);
 		var serietv =new SerieTV({
-			titulo:req.body.titulo,
-			temporadas:req.body.temporadas,
-			pais:req.body.pais,
-			genero:req.body.genero,
+			titulo: req.body.titulo,
+			temporadas: req.body.temporadas,
+			pais: req.body.pais,
+			genero: req.body.genero,
 		});
 
 		serietv.save(function(err){
